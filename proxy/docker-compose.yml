@@ -1,0 +1,27 @@
+version: '2'
+services:
+ proxy:
+  container_name: proxy
+  build: ./
+  image: nginx-proxy
+  # No need to specify network if all containers will be in one default network
+  # networks:
+  #  - website1
+  #  - website2
+  networks: 
+   - default
+  ports:
+   - 80:80
+   - 443:443
+
+# networks:
+# website1:
+#  external:
+#   name: website1_default
+# website2:
+#  external:
+#   name: website2_default
+
+networks:
+  default:
+    name: aws-webserver-network
