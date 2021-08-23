@@ -7,10 +7,3 @@ services:
    - .:/usr/share/nginx/html
   ports:
    - "80"
-  networks:
-   - default
-
-
-networks:
-  default:
-    name: aws-webserver-network
